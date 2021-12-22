@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Customers list page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div align="center"> 
+	<h1>SportyShoes.com</h1>
+	<h3>Customers per week list</h3>
+	</div>
+	
+	<div align="center">
+		<form th:action="@{/customer}">
+		Search by week 01 to 52: 
+		&nbsp;
+		<input type="text" name="criteria" required/>
+		&nbsp;
+		<input type="submit" value = "filter"/>
+		&nbsp;
+		<input type="button" value = "entire customer list" onclick="clearFilter()"/>
+		&nbsp;
+		</form>		
+	</div><br><br>
+	
+	<div align="center">
+	<table border="1" cellpadding="5">
+	<thead>
+	<tr>
+	<th>Customer Id</th>
+	<th>FirstName</th>
+	<th>LastName</th>
+	<th>Country</th>
+	<th>Email</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr th:each="customer: ${listCustomer}">
+	<td th:text="${customer.id}">Customer Id</td>
+	<td th:text="${customer.firstname}">FirstName</td>
+	<td th:text="${customer.lastname}">LastName</td>
+		<td th:text="${customer.country}">Country</td>
+	<td th:text="${customer.email}">Email</td>
+	</tr>
+	</th:block>
+	</tbody>
+	</table>
+	</div><br><br>
+	
+	<div align="center">
+ 	<a th:href="@{/}">Main page</a>
+	</div>   
+	  
+	<script type="text/javascript">
+		function clearFilter(){
+			window.location='/customer'}
+	</script>   
+</body>
+</html>

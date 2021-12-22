@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Index page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div align="center"> 
+	<h1>SportyShoes.com</h1>
+	<h3>Welcome to Admin selection page</h3><br>
+   	 	<form action="#" th:action="@{/customer}">      
+	<button type="submit" class="btn btn-info" align="right">Customer list</button> </form><br>
+	
+	   	 	<form action="#" th:action="@{/product}">      
+	<button type="submit" class="btn btn-info" align="right">Product list</button> </form><br>
+
+		<form action="#" th:action="@{/logout}" method="post">
+   	<button type="submit" class="btn btn-info" align="right">Logout</button> </form><br>
+	
+   	<form action="#" th:action="@{/change}" method="post">      
+	<button type="submit" class="btn btn-info" align="right">Change password</button> </form><br>
+	</div>
+</body>
+</html>

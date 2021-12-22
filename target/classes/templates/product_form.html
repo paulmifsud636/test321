@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Products list page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+	<div align="center"> 
+	<h1>SportyShoes.com</h1>
+	<h3>Add a new product</h3><br></div>
+	<form th:action="@{/product/save}" method="post" th:object="${product}" style="max-width: 550px; margin:0 auto;">
+	<div class="border">
+	<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Brand :</label>
+	<input type="text" th:field="*{brand}" class="form-control" required/>
+	</div><br>
+	<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Category :</label>
+	<input type="text" th:field="*{category}" class="form-control" required/>
+	</div><br>
+	<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Color :</label>
+	<input type="text" th:field="*{color}" class="form-control" required/>
+	</div><br>
+	<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Name :</label>
+	<input type="text" th:field="*{name}" class="form-control" required/>
+	</div><br>
+		<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Price :</label>
+	<input type="text" th:field="*{price}" class="form-control" required/>
+	</div><br>
+	<div class="form-group row">
+	<label class="col-sm-3 col-form-label">Size :</label>
+	<input type="text" th:field="*{size}" class="form-control" required/>
+	</div>
+	</div><br>
+	<button type="submit" class="save">Save</button></form>
+</body>
+</html>
